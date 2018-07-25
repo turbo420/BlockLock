@@ -38,7 +38,7 @@ public class Door implements Listener{
 	  	    	  player.sendMessage("yes it's me");
 	  	    	  player.sendMessage("fuck");
 	  	    	player.sendMessage("fuck");
-	  	    	 
+	  	    	player.sendMessage("fuck");
 	  	    	  return;
 	  	      }else {
 	  	    	  event.setCancelled(true);
