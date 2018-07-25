@@ -41,7 +41,7 @@ public class Door implements Listener{
 	  	      }else {
 	  	    	  event.setCancelled(true);
 	  	  		player.sendMessage(""
-	  	  				+ "no it's not your Top");
+	  	  				+ "no it's not your Door");
 	  	  		return;
 	  		}
 	  			
