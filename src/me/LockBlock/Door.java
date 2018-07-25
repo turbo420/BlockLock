@@ -36,6 +36,8 @@ public class Door implements Listener{
 	  	      if(block33.getCustomName().contains(player.getDisplayName())){
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's me");
+	  	    	  player.sendMessage("fuck");
+	  	    	player.sendMessage("fuck");
 	  	    	 
 	  	    	  return;
 	  	      }else {
