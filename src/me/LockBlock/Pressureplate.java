@@ -17,13 +17,13 @@ public class Pressureplate implements Listener{
 	 @EventHandler
 	  public void onPlayerInteract(PlayerInteractEvent event) {
 	if(event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.ACACIA_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.DARK_OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.BIRCH_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.SPRUCE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.STONE_PRESSURE_PLATE)){
-	  	 
+	  	 boolean notyourdoor = true;
 		 Player player = event.getPlayer();
 		   Block block= event.getClickedBlock();
 		   //BlockState state = block.getState();
 	  	 //Doors.spawn(player,block, null);
 	  	 
-		   
+//MAYBE CANCEL DOOR TO FIX 		   
 		   
 		   Location y = block.getLocation().getBlock().getLocation().subtract(1,2,0);//player.getLocation().getBlock().;
 	  	 if(y.getBlock().getType().equals(Material.CHEST)){
@@ -39,7 +39,7 @@ public class Pressureplate implements Listener{
 	  	    	 
 	  	    	  return;
 	  	      }else {
-	  	    	  event.setCancelled(true);
+	  	    	  event.setCancelled(notyourdoor);
 	  	  		player.sendMessage(""
 	  	  				+ "Not Your Door");
 	  	  		return;
@@ -63,7 +63,7 @@ public class Pressureplate implements Listener{
 	  	    	 
 	  	    	  return;
 	  	     }else {
-	  	    	  event.setCancelled(true);
+	  	    	  event.setCancelled(notyourdoor);
 	  	      	player.sendMessage("Not Your Door");
 	  	  		return;
 	  		}
@@ -85,7 +85,7 @@ public class Pressureplate implements Listener{
 	  	    	 
 	  	    	  return;
 	  	     }else {
-	  	    	  event.setCancelled(true);
+	  	    	  event.setCancelled(notyourdoor);
 	  	      	player.sendMessage("Not Your Door");
 	  	  		return;
 	  		}
@@ -108,7 +108,7 @@ public class Pressureplate implements Listener{
 	  	    	  player.sendMessage("yes it's my Door");
 	  	    	  return;
 	  	     }else {
-	  	    	  event.setCancelled(true);
+	  	    	  event.setCancelled(notyourdoor);
 	  	      	player.sendMessage("Not Your Door");
 	  	  		return;
 	  		}

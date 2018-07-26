@@ -17,12 +17,13 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener{
 	ConsoleCommandSender console;
-	
+	private static Plugin plugin;
 	public void onEnable(){
 		
 		PluginManager pluginManager  = getServer().getPluginManager();
@@ -138,6 +139,17 @@ public class Main extends JavaPlugin implements Listener{
 	
 	}
 
+	
+	//To access the plugin variable from other classes
+	public static Plugin getPlugin() {
+	return plugin;
+	}
+	
+	
+	
+	
+	
+	
 	@EventHandler
 	public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
 		//Player player = event.getPlayer();
