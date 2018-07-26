@@ -16,16 +16,21 @@ public class Pressureplate implements Listener{
 		}
 	 @EventHandler
 	  public void onPlayerInteract(PlayerInteractEvent event) {
-	if(event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.ACACIA_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.DARK_OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.BIRCH_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.SPRUCE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.STONE_PRESSURE_PLATE)){
+		 
+		
+
+		 
+		 
+	if(event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.DARK_OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.BIRCH_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.SPRUCE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.STONE_PRESSURE_PLATE)){
 	  	 boolean notyourdoor = true;
 		 Player player = event.getPlayer();
-		   Block block= event.getClickedBlock();
+		   Block block1= event.getClickedBlock();
 		   //BlockState state = block.getState();
 	  	 //Doors.spawn(player,block, null);
-	  	 
+	  	 player.sendMessage(event.getEventName());
 //MAYBE CANCEL DOOR TO FIX 		   
 		   
-		   Location y = block.getLocation().getBlock().getLocation().subtract(1,2,0);//player.getLocation().getBlock().;
+		   Location y = block1.getLocation().getBlock().getLocation().subtract(1,2,0);//player.getLocation().getBlock().;
 	  	 if(y.getBlock().getType().equals(Material.CHEST)){
 	  		 //if(!y.getBlock().getType().equals(Material.CHEST)){
 	  		//	 event.setCancelled(false);
@@ -37,18 +42,18 @@ public class Pressureplate implements Listener{
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's my Door");
 	  	    	 
-	  	    	  return;
+	  	    	 	
 	  	      }else {
 	  	    	  event.setCancelled(notyourdoor);
 	  	  		player.sendMessage(""
 	  	  				+ "Not Your Door");
-	  	  		return;
+	  	  			
 	  		}
 	  			
 	  		}
 	  	 
 
-	  	 Location yBelow = block.getLocation().getBlock().getLocation().subtract(0,2,1);//player.getLocation().getBlock().; left side of door
+	  	 Location yBelow = block1.getLocation().getBlock().getLocation().subtract(0,2,1);//player.getLocation().getBlock().; left side of door
 	  	 if(yBelow.getBlock().getType().equals(Material.CHEST)){
 	  		 //if(!y.getBlock().getType().equals(Material.CHEST)){
 	  		//	 event.setCancelled(false);
@@ -61,16 +66,16 @@ public class Pressureplate implements Listener{
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's my Door");
 	  	    	 
-	  	    	  return;
+	  	    	  	
 	  	     }else {
 	  	    	  event.setCancelled(notyourdoor);
 	  	      	player.sendMessage("Not Your Door");
-	  	  		return;
+	  	  			
 	  		}
 	  			
 	  		}
 	  	
-	  	 Location yBelow2 = block.getLocation().getBlock().getLocation().subtract(-1,2,0);//player.getLocation().getBlock().;
+	  	 Location yBelow2 = block1.getLocation().getBlock().getLocation().subtract(-1,2,0);//player.getLocation().getBlock().;
 	  	 if(yBelow2.getBlock().getType().equals(Material.CHEST)){
 	  		// if(!y.getBlock().getType().equals(Material.CHEST)){
 	  		//	 event.setCancelled(false);
@@ -83,18 +88,18 @@ public class Pressureplate implements Listener{
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's my Door");
 	  	    	 
-	  	    	  return;
+	  	    	  	
 	  	     }else {
 	  	    	  event.setCancelled(notyourdoor);
 	  	      	player.sendMessage("Not Your Door");
-	  	  		return;
+	  	  			
 	  		}
 	  			
 	  		}
 	  	 
 	  	 
 	  	 
-	  	Location yBelow3 = block.getLocation().getBlock().getLocation().subtract(0,2,-1);//player.getLocation().getBlock().;
+	  	Location yBelow3 = block1.getLocation().getBlock().getLocation().subtract(0,2,-1);//player.getLocation().getBlock().;
 	  	 if(yBelow3.getBlock().getType().equals(Material.CHEST)){
 	  		 //if(!y.getBlock().getType().equals(Material.CHEST)){
 	  		//	 event.setCancelled(false);
@@ -106,11 +111,11 @@ public class Pressureplate implements Listener{
 	  	     if(block33.getCustomName().contains(player.getDisplayName())){
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's my Door");
-	  	    	  return;
-	  	     }else {
+		  	    	  	
+		  	     }else {
 	  	    	  event.setCancelled(notyourdoor);
 	  	      	player.sendMessage("Not Your Door");
-	  	  		return;
+	  	  			
 	  		}
 	  			
 	  		}

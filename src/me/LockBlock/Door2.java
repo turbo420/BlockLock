@@ -9,9 +9,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class Door implements Listener{
+public class Door2 implements Listener{
 
-	public Door(Main plugin) {
+	public Door2(Main plugin) {
 	  /// plugin.getServer()
 	}
 
@@ -26,6 +26,9 @@ public class Door implements Listener{
 	  	
 		   Player player = event.getPlayer();
 		   Block block= event.getClickedBlock();
+		   
+		  
+		   
 		   //BlockState state = block.getState();
 	  	 //Doors.spawn(player,block, null);
 	  	 Location y = block.getLocation().getBlock().getLocation().subtract(0,3,0);//player.getLocation().getBlock().;

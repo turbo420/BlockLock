@@ -27,11 +27,11 @@ public class Main extends JavaPlugin implements Listener{
 	public void onEnable(){
 		
 		PluginManager pluginManager  = getServer().getPluginManager();
-		Door door = new Door(this);
+		Door2 door2 = new Door2(this);
 		Button button = new Button(this);
 		Chestit chest = new Chestit(this);
 		Pressureplate pressureplate = new Pressureplate(this);
-		pluginManager.registerEvents(door, this);
+		pluginManager.registerEvents(door2, this);
 		pluginManager.registerEvents(button, this);
 		pluginManager.registerEvents(pressureplate, this);
 		pluginManager.registerEvents(chest, this);
