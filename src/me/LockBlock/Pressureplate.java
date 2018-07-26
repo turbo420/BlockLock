@@ -21,13 +21,13 @@ public class Pressureplate implements Listener{
 
 		 
 		 
-	if(event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.DARK_OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.BIRCH_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.SPRUCE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.STONE_PRESSURE_PLATE)){
+	if(event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.DARK_OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.JUNGLE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.BIRCH_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.SPRUCE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.OAK_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.STONE_PRESSURE_PLATE)||event.getAction() == Action.PHYSICAL && event.getClickedBlock().getType().equals(Material.ACACIA_PRESSURE_PLATE)){
 	  	 boolean notyourdoor = true;
 		 Player player = event.getPlayer();
 		   Block block1= event.getClickedBlock();
 		   //BlockState state = block.getState();
 	  	 //Doors.spawn(player,block, null);
-	  	 player.sendMessage(event.getEventName());
+	  	// player.sendMessage(event.getEventName());
 //MAYBE CANCEL DOOR TO FIX 		   
 		   
 		   Location y = block1.getLocation().getBlock().getLocation().subtract(1,2,0);//player.getLocation().getBlock().;
@@ -37,7 +37,7 @@ public class Pressureplate implements Listener{
 	  			
 	  		// }
 	  	      Chest block33 = (Chest) y.getBlock().getState(); 
-	  	      player.sendMessage(block33.getCustomName());
+	  	      //player.sendMessage(block33.getCustomName());
 	  	      if(block33.getCustomName().contains(player.getDisplayName())){
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's my Door");
@@ -45,8 +45,7 @@ public class Pressureplate implements Listener{
 	  	    	 	
 	  	      }else {
 	  	    	  event.setCancelled(notyourdoor);
-	  	  		player.sendMessage(""
-	  	  				+ "Not Your Door");
+	  	  		player.sendMessage("Not Your Door");
 	  	  			
 	  		}
 	  			
