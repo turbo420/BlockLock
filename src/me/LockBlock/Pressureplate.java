@@ -60,7 +60,7 @@ public class Pressureplate implements Listener{
 	  		 //}
 	  		 
 	  		 Chest block33 = (Chest) yBelow.getBlock().getState(); 
-	  	     player.sendMessage(block33.getCustomName());
+	  	     //player.sendMessage(block33.getCustomName());
 	  	     if(block33.getCustomName().contains(player.getDisplayName())){
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's my Door");
@@ -82,7 +82,7 @@ public class Pressureplate implements Listener{
 	  		// }
 	  		 
 	  		 Chest block33 = (Chest) yBelow2.getBlock().getState(); 
-	  	     player.sendMessage(block33.getCustomName());
+	  	     //player.sendMessage(block33.getCustomName());
 	  	     if(block33.getCustomName().contains(player.getDisplayName())){
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's my Door");
@@ -106,7 +106,7 @@ public class Pressureplate implements Listener{
 	  		// }
 	  		 
 	  		 Chest block33 = (Chest) yBelow3.getBlock().getState(); 
-	  	     player.sendMessage(block33.getCustomName());
+	  	     //player.sendMessage(block33.getCustomName());
 	  	     if(block33.getCustomName().contains(player.getDisplayName())){
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's my Door");
