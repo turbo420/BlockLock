@@ -29,12 +29,12 @@ public class Main extends JavaPlugin implements Listener{
 		PluginManager pluginManager  = getServer().getPluginManager();
 		Levers levers = new Levers(this);
 		Door2 door2 = new Door2(this);
-		Button button = new Button(this);
+		Button2 button2 = new Button2(this);
 		Chestit chest = new Chestit(this);
 		Pressureplate pressureplate = new Pressureplate(this);
 		pluginManager.registerEvents(levers, this);
 		pluginManager.registerEvents(door2, this);
-		pluginManager.registerEvents(button, this);
+		pluginManager.registerEvents(button2, this);
 		pluginManager.registerEvents(pressureplate, this);
 		pluginManager.registerEvents(chest, this);
 		pluginManager.registerEvents(this, this);
@@ -85,15 +85,15 @@ public class Main extends JavaPlugin implements Listener{
 				    ItemMeta im = i.getItemMeta();
 		            
 		            if (args.length == 0){
-		            	im.setDisplayName(ChatColor.RED + "ChestLock:"+player.getName());
+		            	im.setDisplayName(ChatColor.DARK_RED + "ChestLock:"+ ChatColor.DARK_BLUE +player.getName());
 		            }else if (args.length == 1){
-		            	im.setDisplayName(ChatColor.RED + "ChestLock:"+player.getName() +" " + args[0].toString());	 
+		            	im.setDisplayName(ChatColor.DARK_RED+ "ChestLock:"+ ChatColor.DARK_BLUE +player.getName() +" " + args[0].toString());	 
 		            }else if (args.length == 2){
-		            	im.setDisplayName(ChatColor.RED + "ChestLock:"+player.getName() +" " + args[0].toString()+" " + args[1].toString());
+		            	im.setDisplayName(ChatColor.DARK_RED + "ChestLock:"+ ChatColor.DARK_BLUE +player.getName() +" " + args[0].toString()+" " + args[1].toString());
 					}else if (args.length == 3) {
-						im.setDisplayName(ChatColor.RED + "ChestLock:"+player.getName() +" " + args[0].toString()+" " + args[1].toString()+" " + args[2].toString());
+						im.setDisplayName(ChatColor.DARK_RED + "ChestLock:"+ ChatColor.DARK_BLUE +player.getName() +" " + args[0].toString()+" " + args[1].toString()+" " + args[2].toString());
 					}else if (args.length == 4 ) {
-						im.setDisplayName(ChatColor.RED + "ChestLock:"+player.getName() +" " + args[0].toString()+" " + args[1].toString()+" " + args[2].toString()+" " + args[3].toString());
+						im.setDisplayName(ChatColor.DARK_RED+ "ChestLock:"+ ChatColor.DARK_BLUE +player.getName() +" " + args[0].toString()+" " + args[1].toString()+" " + args[2].toString()+" " + args[3].toString());
 
 					}else if (args.length == 5) {
 						

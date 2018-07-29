@@ -3,14 +3,11 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
-import org.bukkit.block.data.BlockData;
-import org.bukkit.block.data.Openable;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.material.Lever;
 
 public class Door2 implements Listener{
 	 Main plugin;
@@ -24,16 +21,24 @@ public class Door2 implements Listener{
 	
 	  @EventHandler
 	  public void onPlayerInteract(PlayerInteractEvent event) {
-	  	
-	   //if ( event.getClickedBlock().getType()== (Material.ACACIA_DOOR) || event.getClickedBlock().getType() == (Material.SPRUCE_DOOR) || event.getClickedBlock().getType()==(Material.OAK_DOOR) || event.getClickedBlock().getType()==(Material.DARK_OAK_DOOR) ||event.getClickedBlock().getType()==(Material.JUNGLE_DOOR)) {
+		  Action action = event.getAction();
+	   if(action.equals(Action.RIGHT_CLICK_AIR)| action.equals(Action.LEFT_CLICK_AIR)){
+		   return;
+	   }
+		  
+		  
+		  if (action.equals(Action.RIGHT_CLICK_BLOCK)&& event.getClickedBlock().getType()==  Material.ACACIA_DOOR  || event.getClickedBlock().getType() ==  Material.SPRUCE_DOOR || event.getClickedBlock().getType()== Material.OAK_DOOR || event.getClickedBlock().getType()== Material.DARK_OAK_DOOR ||event.getClickedBlock().getType()== Material.JUNGLE_DOOR||event.getClickedBlock().getType()== Material.BIRCH_DOOR) {
 	  	
 		   Player player = event.getPlayer();
 		   Block block= event.getClickedBlock();
 		   
 		   if(block == null)
 			   return;
-		   
-		   
+		  // BlockState state = block.getState();
+		  // if(state instanceof Door){
+			//   Door door = (Door) state;
+			  // door.
+		  // }
 		   
 		  // player.sendMessage("running in doors");
 		   
@@ -48,7 +53,7 @@ public class Door2 implements Listener{
 	  	      if(block33.getCustomName().contains(player.getDisplayName())){
 	  	    	  event.setCancelled(false);
 	  	    	  player.sendMessage("yes it's me");
-
+	  	    	  
 	  	    	 // return;
 	  	      }else {
 	  	    	 event.setCancelled(true);
@@ -105,7 +110,7 @@ public class Door2 implements Listener{
 	   
 	  }
 
-	  	
+}	
 	  	
 	  	// @EventHandler
 	  	 //public void onBlockPlace(BlockPlaceEvent event)

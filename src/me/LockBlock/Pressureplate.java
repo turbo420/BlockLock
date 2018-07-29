@@ -4,11 +4,14 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
+import org.bukkit.block.data.BlockData;
+import org.bukkit.block.data.type.Switch;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.material.PressurePlate;
 
 public class Pressureplate implements Listener{
 	public Pressureplate (Main plugin) {
@@ -25,10 +28,33 @@ public class Pressureplate implements Listener{
 	  	 boolean notyourdoor = true;
 		 Player player = event.getPlayer();
 		   Block block1= event.getClickedBlock();
+		  
+		   if(block1 == null)
+			   return;
+		   
 		   //BlockState state = block.getState();
 	  	 //Doors.spawn(player,block, null);
 	  	// player.sendMessage(event.getEventName());
 //MAYBE CANCEL DOOR TO FIX 		   
+		   //if(event.getClickedBlock().getType() == Material.JUNGLE_PRESSURE_PLATE){
+			 // BlockData blockData = Material.JUNGLE_PRESSURE_PLATE.createBlockData();
+			   //If you need to set BlockData data values, cast blockData to the appropriate class and then use the associated methods:
+			  // PressurePlate stairs = (PressurePlate) event.getClickedBlock().getState();
+			 //  if(stairs== null)
+				//   return;
+			  /// player.sendMessage(event.getClickedBlock().getType().name());
+			  
+			  // stairs.setPowered(false);
+			   //block.setBlockData(stairs);
+			   //block1.setBlockData((BlockData) stairs);
+			   //if(stairs.isPressed()){
+				 //  player.sendMessage("it's down");
+			   //}
+			   
+			   //BlockData fg = block1.getBlockData();
+		  // }
+		   
+		 
 		   
 		   Location y = block1.getLocation().getBlock().getLocation().subtract(1,2,0);//player.getLocation().getBlock().;
 	  	 if(y.getBlock().getType().equals(Material.CHEST)){
