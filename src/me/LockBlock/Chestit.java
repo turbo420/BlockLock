@@ -8,6 +8,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 
@@ -39,7 +40,7 @@ public class Chestit implements Listener{
 	@EventHandler
     public void onInventoryOpenEvent(InventoryOpenEvent event){
 	 //need to make changes       
-	 
+		
 	 Player player = (Player) event.getPlayer();
 	 //UUID uuid = player.getUniqueId();
 	  //Player Name =  player.getName().toString();
@@ -60,7 +61,12 @@ public class Chestit implements Listener{
             	player.sendMessage(ChatColor.DARK_RED +"[ChestLock:]" + ChatColor.BLUE + "YOUR CHEST");
             	event.setCancelled(false);
             }else {
-            	
+            	if (event.getInventory().getName().equals("Horse")){
+            		//player.sendMessage("it's a horse");
+            		event.setCancelled(false);
+            		return;
+            	}
+            	player.sendMessage(event.getInventory().getName());
             	player.sendMessage(ChatColor.DARK_RED +"[ChestLock:]" + ChatColor.RED + "NOT YOUR CHEST");
             	event.setCancelled(true);
 			}

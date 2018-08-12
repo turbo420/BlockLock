@@ -20,7 +20,7 @@ public class Door2 implements Listener{
 	 
 	
 	  @EventHandler
-	  public void onPlayerInteract(PlayerInteractEvent event) {
+	  public void onPlayerInteract2(PlayerInteractEvent event) {
 		  Action action = event.getAction();
 	   if(action.equals(Action.RIGHT_CLICK_AIR)| action.equals(Action.LEFT_CLICK_AIR)){
 		   return;
